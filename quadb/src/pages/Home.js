@@ -14,9 +14,9 @@ const Home = () => {
     const getallitems= async ()=>{
         setLoad(true)
         const result= await Axios.post('http://localhost:5000/getitems', selecteditem);
-        console.log(result.data);
-        setItems(result.data)
-        setLoad(false)
+        console.log(result);
+        setItems(result)
+        setLoad(false) 
     }
 
     useEffect(()=>{
@@ -35,11 +35,9 @@ const Home = () => {
         setSelecteditem((prevState) => {
             return { ...prevState, base_unit: event.target.value }
         });
-    }
+    } 
 
-    let count=0;
-
-
+ 
 
 
   return (
